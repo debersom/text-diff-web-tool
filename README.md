@@ -37,7 +37,6 @@ To use the application you need to call the API to add the left and right texts 
     **key**: the unique identifier used to relate the two text and generate the comparison.
     **side**: the side of the text, could be *left* or *right*.
     **body**: the body of the POST should contains a JSON object with the text on an attribute named as value.
-    
      
 2) `GET /api/v1/diff/{key}`
     
@@ -50,6 +49,10 @@ To use the application you need to call the API to add the left and right texts 
     - offset: the start position for the first difference
     - length: the length of the different part of the text on right
     - diff: the different part of the text on right
+    
+### API Documentation
+
+Swagger documentation [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
     
 ## Improvements
 

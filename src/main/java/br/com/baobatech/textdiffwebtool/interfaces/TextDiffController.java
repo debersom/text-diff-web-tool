@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api
+@Api(value = "Main controller for all text comparator endpoints")
 @RestController
 @RequestMapping(path = "/api")
 public class TextDiffController {
@@ -35,10 +35,10 @@ public class TextDiffController {
     this.comparator = comparator;
   }
 
-  @ApiOperation(value = "Adds a value")
-  @PostMapping(path = "/v1/diff/{id}/{side}")
+  @ApiOperation(value = "Adds a text for a specific side using a key")
+  @PostMapping(path = "/v1/diff/{key}/{side}")
   public ResponseEntity<Void> addValue(
-      @PathVariable("id") final String key,
+      @PathVariable("key") final String key,
       @PathVariable("side") final Side side,
       @RequestBody final TextValueRequest text
   ) {
@@ -52,10 +52,10 @@ public class TextDiffController {
     }
   }
 
-  @ApiOperation(value = "Computes the text diff from values previously sent")
-  @GetMapping(path = "/v1/diff/{id}")
+  @ApiOperation(value = "Computes the text diff from texts previously sent using a key")
+  @GetMapping(path = "/v1/diff/{key}")
   public ResponseEntity<TextDiff> getDiff(
-      @PathVariable("id") final String key
+      @PathVariable("key") final String key
   ) {
     LOGGER.trace("entry");
     try {
