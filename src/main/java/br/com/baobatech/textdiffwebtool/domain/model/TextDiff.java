@@ -5,17 +5,23 @@ package br.com.baobatech.textdiffwebtool.domain.model;
  */
 public class TextDiff {
 
-  public final boolean equals;
+  public final boolean equal;
   public final int sizeDiff;
-  public final double diffPercent;
+  public final int offset;
+  public final int length;
+  public final String diff;
 
   public TextDiff(
-      final boolean equals,
+      final boolean equal,
       final int sizeDiff,
-      final double diffPercent
+      final int offset,
+      final int length,
+      final String diff
   ) {
-    this.equals = equals;
+    this.equal = equal;
     this.sizeDiff = sizeDiff;
-    this.diffPercent = diffPercent;
+    this.offset = offset;
+    this.length = length;
+    this.diff = diff;
   }
 }
