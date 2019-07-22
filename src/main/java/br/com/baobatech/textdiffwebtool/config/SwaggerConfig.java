@@ -1,9 +1,7 @@
 package br.com.baobatech.textdiffwebtool.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -16,8 +14,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-@EnableWebMvc
-@ComponentScan(basePackages = "br.com.baobatech.textdiffwebtool.interfaces")
 public class SwaggerConfig extends WebMvcConfigurationSupport {
 
   @Bean
